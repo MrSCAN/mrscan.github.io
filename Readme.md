@@ -1,58 +1,31 @@
-# Personal Portfolio 🔥
+# Chinonso Ngwu — Personal Portfolio
 
-> https://mrscan.github.io/
+Live site: https://mrscan.github.io/
 
-## Features 📋
+A minimal, modern, single-page portfolio for Chinonso Ngwu, Full-Stack Software Engineer at Cisco Meraki specializing in Edge AI and Computer Vision.
 
-⚡️ Fully Responsive\
-⚡️ Valid HTML5 & CSS3\
-⚡️ Typing animation using `Typed.js`\
-⚡️ Easy to modify
+## Structure
 
-## Installation & Deployment 📦
+- `index.html` — the entire site (self-contained HTML + CSS + tiny vanilla JS, no build step, no jQuery, no Bootstrap).
+- `assets/Chinonso_Ngwu_CV.pdf` — downloadable CV linked from the nav and hero.
+- `favicon.png` — site favicon.
+- `index.old.html` — backup of the previous Bootstrap-based template.
+- `projects/` — legacy project detail pages (kept for now; not linked from the new homepage).
+- `assets/img/`, `assets/vendor/`, etc. — legacy assets from the previous template.
 
-- Clone the repository and modify the content of <b>index.html</b>
-- Add or remove images from `assets/img/` directory as per your requirement.
-- Update the info of `projects` folder according to your need
-- Use [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to create your own website.
-- To deploy your website, first you need to create github repository with name `<your-github-username>.github.io` and push the generated code to the `master` branch.
+## Deployment
 
-## Sections 📚
+Pushed to the `master` branch of the `mrscan.github.io` repo; served via GitHub Pages at the root domain.
 
-✔️ About\
-✔️ Interests\
-✔️ Education\
-✔️ Online Certification\
-✔️ Experience\
-✔️ Skills \
-✔️ Resume\
-✔️ Contact Info
+## Updating the CV
 
-## Tools Used 🛠️
-
-- <b>GitHub Pages</b> - To host my static website (HTML, CSS, JS).
-
-## Contributing 💡
-
-#### Step 1
-
-- **Option 1**
-
-  - 🍴 Fork this repo!
-
-- **Option 2**
-  - 👯 Clone this repo to your local machine.
-
-#### Step 2
-
-- **Build your code** 🔨🔨🔨
-
-#### Step 3
-
-- 🔃 Create a new pull request.
+1. Re-generate the PDF (from the CVs folder one level up).
+2. Copy it in:
+   ```sh
+   cp ../Chinonso_Ngwu_CV.pdf assets/Chinonso_Ngwu_CV.pdf
+   ```
+3. Commit and push.
 
 ## License
 
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
-
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+[MIT](http://opensource.org/licenses/mit-license.php)

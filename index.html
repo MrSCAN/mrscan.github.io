@@ -1,1107 +1,1054 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-5BB8W2X");
-    </script>
-    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinonso Ngwu &mdash; Full-Stack Software Engineer</title>
+    <meta
+      name="description"
+      content="Chinonso Ngwu is a full-stack software engineer at Cisco Meraki specializing in Edge AI, computer vision, and embedded systems."
+    />
+    <meta name="author" content="Chinonso Ngwu" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chinonso Ngwu — Full-Stack Software Engineer" />
+    <meta
+      property="og:description"
+      content="Full-Stack Software Engineer specializing in Edge AI and Computer Vision systems at Cisco Meraki."
+    />
+    <meta property="og:type" content="website" />
+
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Personal Portfolio</title>
-    <meta content="" name="descriptison" />
-    <meta content="" name="keywords" />
-
-    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Vendor CSS Files -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/owl.carousel/assets/owl.carousel.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --bg-elevated: #121821;
+        --bg-card: #161e29;
+        --border: #1f2a38;
+        --border-hover: #2a3a4e;
+        --text: #e6edf3;
+        --text-muted: #8b96a5;
+        --text-dim: #5f6b7c;
+        --accent: #12d640;
+        --accent-soft: rgba(18, 214, 64, 0.12);
+        --accent-border: rgba(18, 214, 64, 0.3);
+        --radius: 12px;
+        --radius-lg: 16px;
+        --maxw: 1080px;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+        --transition: 180ms cubic-bezier(0.4, 0, 0.2, 1);
       }
-      gtag("js", new Date());
 
-      gtag("config", "UA-169007209-3");
-    </script>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-    <!-- =======================================================
-  * Template Name: Personal - v2.1.0
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color var(--transition);
+      }
+      a:hover {
+        color: #5fff8a;
+      }
+
+      code,
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+        font-size: 0.92em;
+      }
+
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ===================== NAV ===================== */
+      nav.topnav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 15, 20, 0.85);
+        backdrop-filter: saturate(150%) blur(12px);
+        -webkit-backdrop-filter: saturate(150%) blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      nav.topnav .inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      nav.topnav .brand {
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+      nav.topnav .brand span {
+        color: var(--accent);
+      }
+      nav.topnav ul {
+        display: flex;
+        gap: 4px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+      nav.topnav ul a {
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all var(--transition);
+      }
+      nav.topnav ul a:hover {
+        color: var(--text);
+        background: var(--bg-elevated);
+      }
+      nav.topnav ul a.cv {
+        color: var(--accent);
+        border: 1px solid var(--accent-border);
+        background: var(--accent-soft);
+      }
+      nav.topnav ul a.cv:hover {
+        background: rgba(18, 214, 64, 0.2);
+        color: #5fff8a;
+      }
+
+      /* ===================== HERO ===================== */
+      .hero {
+        padding: 96px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            600px circle at 15% 20%,
+            rgba(18, 214, 64, 0.08),
+            transparent 40%
+          ),
+          radial-gradient(
+            500px circle at 85% 60%,
+            rgba(59, 130, 246, 0.05),
+            transparent 40%
+          );
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+      }
+      .hero .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border: 1px solid var(--accent-border);
+        padding: 6px 12px;
+        border-radius: 999px;
+        margin-bottom: 24px;
+        font-weight: 500;
+      }
+      .hero .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 8px var(--accent);
+      }
+      .hero h1 {
+        font-size: clamp(36px, 5.4vw, 56px);
+        line-height: 1.08;
+        font-weight: 800;
+        margin: 0 0 20px;
+        letter-spacing: -0.025em;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+      }
+      .hero .lede {
+        font-size: clamp(17px, 1.7vw, 19px);
+        color: var(--text-muted);
+        max-width: 720px;
+        line-height: 1.65;
+        margin: 0 0 32px;
+      }
+      .hero .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 18px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14.5px;
+        transition: all var(--transition);
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #062813;
+      }
+      .btn-primary:hover {
+        background: #5fff8a;
+        color: #062813;
+        transform: translateY(-1px);
+      }
+      .btn-ghost {
+        background: var(--bg-elevated);
+        color: var(--text);
+        border-color: var(--border);
+      }
+      .btn-ghost:hover {
+        border-color: var(--border-hover);
+        color: var(--text);
+      }
+      .hero .meta {
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      .hero .meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* ===================== SECTIONS ===================== */
+      section {
+        padding: 72px 0;
+        border-top: 1px solid var(--border);
+      }
+      .section-title {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 8px;
+      }
+      .section-heading {
+        font-size: clamp(26px, 3vw, 34px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 0 0 40px;
+        line-height: 1.2;
+      }
+
+      /* ===================== ABOUT ===================== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .about-grid p {
+        color: var(--text-muted);
+        font-size: 16px;
+        line-height: 1.75;
+        margin: 0 0 16px;
+      }
+      .about-grid p strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .info-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+      }
+      .info-card h3 {
+        margin: 0 0 16px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+      .info-card dl {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px 16px;
+        font-size: 14.5px;
+      }
+      .info-card dt {
+        color: var(--text-dim);
+      }
+      .info-card dd {
+        margin: 0;
+        color: var(--text);
+      }
+
+      /* ===================== EXPERIENCE ===================== */
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .role {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px 28px;
+        transition: border-color var(--transition), transform var(--transition);
+      }
+      .role:hover {
+        border-color: var(--border-hover);
+      }
+      .role-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8px 16px;
+        margin-bottom: 4px;
+      }
+      .role h3 {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .role .company {
+        color: var(--accent);
+      }
+      .role .dates {
+        color: var(--text-dim);
+        font-size: 13.5px;
+        font-family: "JetBrains Mono", monospace;
+        white-space: nowrap;
+      }
+      .role .location {
+        color: var(--text-dim);
+        font-size: 13.5px;
+        margin-bottom: 14px;
+      }
+      .role ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .role ul li {
+        position: relative;
+        padding-left: 20px;
+        color: var(--text-muted);
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+      .role ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 11px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        opacity: 0.7;
+      }
+      .role ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ===================== EDUCATION ===================== */
+      .grid-two {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .edu-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px 28px;
+      }
+      .edu-card h3 {
+        margin: 0 0 4px;
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .edu-card .degree {
+        color: var(--accent);
+        font-size: 14.5px;
+        margin: 0 0 8px;
+      }
+      .edu-card .meta {
+        color: var(--text-dim);
+        font-size: 13.5px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .edu-card .honor {
+        color: var(--text);
+        font-size: 14px;
+        margin-top: 8px;
+      }
+
+      /* ===================== SKILLS ===================== */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+      }
+      .skill-group {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 20px 24px;
+      }
+      .skill-group h4 {
+        margin: 0 0 14px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chip {
+        display: inline-block;
+        padding: 5px 11px;
+        background: var(--bg-elevated);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 13px;
+        color: var(--text);
+        font-family: "JetBrains Mono", monospace;
+        transition: border-color var(--transition);
+      }
+      .chip:hover {
+        border-color: var(--accent-border);
+      }
+
+      /* ===================== AWARDS ===================== */
+      .award-list {
+        display: grid;
+        gap: 12px;
+      }
+      .award {
+        display: flex;
+        gap: 16px;
+        padding: 18px 22px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .award-icon {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        background: var(--accent-soft);
+        border-radius: 8px;
+        color: var(--accent);
+        font-size: 16px;
+      }
+
+      /* ===================== CONTACT ===================== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      .contact-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 22px 24px;
+      }
+      .contact-card .label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 0 0 6px;
+      }
+      .contact-card .value {
+        font-size: 15px;
+        color: var(--text);
+        word-break: break-word;
+      }
+      .contact-card a {
+        color: var(--text);
+      }
+      .contact-card a:hover {
+        color: var(--accent);
+      }
+
+      /* ===================== FOOTER ===================== */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 32px 0;
+        color: var(--text-dim);
+        font-size: 13.5px;
+        text-align: center;
+      }
+
+      /* ===================== RESPONSIVE ===================== */
+      @media (max-width: 760px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .grid-two {
+          grid-template-columns: 1fr;
+        }
+        nav.topnav ul {
+          gap: 0;
+        }
+        nav.topnav ul a {
+          padding: 6px 8px;
+          font-size: 13px;
+        }
+        nav.topnav .brand {
+          font-size: 14px;
+        }
+        .hero {
+          padding: 64px 0 56px;
+        }
+        section {
+          padding: 56px 0;
+        }
+        .role,
+        .edu-card {
+          padding: 20px 22px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav.topnav ul li:not(:last-child):not(:nth-last-child(2)) {
+          display: none;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- ======= Header ======= -->
-    <header id="header" class="header-tops">
-      <div class="container">
-        <h1><a href="index.html">Chinonso Ngwu</a></h1>
-        <h2 style="color: #fff">
-          I'm <span class="typing" style="color: #12d640"></span>
-        </h2>
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <li class="active">
-              <a href="#header"> <span>Home</span></a>
-            </li>
-            <li>
-              <a href="#about"><span>About</span></a>
-            </li>
-            <li>
-              <a href="#education"> <span>Education</span></a>
-            </li>
-            <li>
-              <a href="#experience"> <span>Experience</span></a>
-            </li>
-            <!--          <li><a href="#projects"> <span>Projects</span></a></li>-->
-            <!-- <li><a href="#portfolio"> <span>Projects</span></a></li> -->
-            <li>
-              <a href="#skills"> <span>Skills</span></a>
-            </li>
-            <li>
-              <a
-                href="https://drive.google.com/file/d/1axmXwDa6vF7ropW_-Y01-c8mvjxUHTzj/view?usp=sharing"
-                target="_blank"
-              >
-                <span>Resume</span></a
-              >
-            </li>
-            <!-- <li><a href="#links"> <span>Resume & Links</span></a></li> -->
-            <li>
-              <a href="#contacts"> <span>Contact</span></a>
-            </li>
-          </ul>
-        </nav>
-        <!-- .nav-menu -->
-
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/chinonso-ngwu/"
-            target="_blank"
-            class="linkedin"
-            ><i class="bx bxl-linkedin"></i
-          ></a>
-          <a href="https://www.github.com/MrScan" target="_blank" class="github"
-            ><i class="bx bxl-github"></i
-          ></a>
-          <a href="mailto:ngwucs@gmail.com" target="_blank" class="google"
-            ><i class="bx bxl-google"></i
-          ></a>
-        </div>
-      </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <!-- ======= About Me ======= -->
-      <div class="about-me container">
-        <div class="section-title">
-          <h2>About</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile.jpeg" class="img-fluid" alt="" />
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <p>
-              Dedicated professional actively contributing to the forefront of innovation as a valuable member of the Cisco Meraki Camera Intelligence team. Specializing in IoT, Linux and embedded development, I bring a wealth of experience to the dynamic realm of AI-powered computer vision solutions. Adept at problem-solving and thriving in collaborative environments, I am committed to advancing projects that redefine the landscape of intelligent camera technology.            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li>
-                    <i class="icofont-rounded-right"></i>
-                    <strong>Profession:</strong> Software Engineer
-                  </li>
-                  <li>
-                    <i class="icofont-rounded-right"></i>
-                    <strong>Phone:</strong> +33 754-58 -9886
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li>
-                    <i class="icofont-rounded-right"></i>
-                    <strong>City:</strong> Paris, France
-                  </li>
-                  <li>
-                    <i class="icofont-rounded-right"></i>
-                    <strong>Email:</strong> ngwucs@gmail.com
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End About Me -->
-
-      <!-- ======= Interests ======= -->
-      <div class="interests container">
-        <div class="section-title">
-          <h2>Interests</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-3 col-md-4">
-            <div class="icon-box">
-              <i class="ri-code-s-slash-fill" style="color: #28a745"></i>
-              <h3>Software Engineering</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="ri-cloud-line" style="color: #ffbb2c"></i>
-              <h3>Cloud Computing</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="ri-remote-control-line" style="color: #1c7d32"></i>
-              <h3>IoT</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <i class="ri-database-2-line" style="color: #5578ff"></i>
-              <h3>Machine Learning</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-camera-3-line" style="color: #e80368"></i>
-              <h3>Computer Vision</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-file-list-3-line" style="color: #47aeff"></i>
-              <h3>Algorithms</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-sensor-fill" style="color: #ffc107"></i>
-              <h3>Embedded</br>(Linux|Yocto|Buildroot)</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <i class="ri-bar-chart-box-line" style="color: #f1081f"></i>
-              <h3>Visualization</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Interests -->
-    </section>
-    <!-- End About Section -->
-
-    <!-- ======= Education Section ======= -->
-    <section id="education" class="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Education</h2>
-        </div>
-        <div class="row">
-          <div
-            class="col-lg-12"
-            data-aos="fade-up"
-            style="display: inline-block"
-          >
-            <div
-              class="col-md-4 mt-4 mt-md-0 icon-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              style="
-                padding: 0px 0px;
-                padding-bottom: 5px;
-                display: inline-block;
-              "
+    <nav class="topnav" aria-label="Primary">
+      <div class="inner">
+        <a href="#top" class="brand">Chinonso<span>.</span>Ngwu</a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a
+              class="cv"
+              href="assets/Chinonso_Ngwu_CV.pdf"
+              target="_blank"
+              rel="noopener"
+              >CV ↗</a
             >
-              <img
-                src="assets/img/education/LX.png"
-                class="img-fluid"
-                alt=""
-                style="color: white; background-color: white"
-              />
-              <!-- <h4 style="text-align:left;"><a href="https://www.asu.edu/" target="_blank" style="color:#12d640">Arizona State University</a><br> </h4> -->
-              <p style="text-align: left; color: #fff; padding: 5px 10px">
-                <em>MSc&T in Internet of Things:Innovation and Management</em>
-              </p>
-              <h5 style="text-align: left; padding: 0px 10px">
-                September 2021 - December, 2023
-              </h5>
-              <h6 style="text-align: left; color: #fff; padding: 0px 10px">
-                Relevant Coursework
-              </h6>
-              <ul style="text-align: left; color: #fff">
-                <li>Communications</li>
-                <li>Software Systems</li>
-                <li>Electronics</li>
-                <li>Management & Economics</li>
-                <li>Law & Regulation</li>
-              </ul>
-            </div>
-            <div
-              class="col-md-4 mt-4 mt-md-0 icon-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              style="
-                padding: 0px 0px;
-                padding-bottom: 5px;
-                display: inline-block;
-              "
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="top">
+      <!-- ====================== HERO ====================== -->
+      <section class="hero" style="border-top: none">
+        <div class="container hero-content">
+          <span class="eyebrow">Available for select collaborations</span>
+          <h1>
+            Chinonso Ngwu.<br />
+            Full-Stack engineer specializing in<br />
+            <span class="accent">Edge AI &amp; Computer Vision.</span>
+          </h1>
+          <p class="lede">
+            I build production-scale camera intelligence features end-to-end at
+            Cisco Meraki &mdash; from C++ firmware on Embedded Linux (Yocto) to
+            Ruby on Rails backends and React dashboards &mdash; deployed across
+            hundreds of thousands of devices worldwide.
+          </p>
+          <div class="actions">
+            <a
+              href="assets/Chinonso_Ngwu_CV.pdf"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+              >Download CV</a
             >
-              <img
-                src="assets/img/education/UNN.jpg"
-                class="img-fluid"
-                alt=""
-                style="min-height: 12.3rem"
-              />
-              <p style="text-align: left; color: #fff; padding: 5px 10px">
-                <em>B.Engr. in Electronic Engineering</em>
-              </p>
-              <h5 style="text-align: left; padding: 0px 10px">
-                September 2014 - September 2019
-              </h5>
-              <h6 style="text-align: left; color: #fff; padding: 0px 10px">
-                Relevant Coursework
-              </h6>
-              <ul style="text-align: left; color: #fff">
-                <li>Digital Systems Design</li>
-                <li>Telecommunications</li>
-                <li>Control Engineering</li>
-                <li>Embedded Systems and AI</li>
-                <li>Robotics</li>
-              </ul>
-            </div>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          </div>
+          <div class="meta">
+            <span aria-label="Location">📍 Paris, France</span>
+            <span aria-label="Current role">💼 Cisco Meraki</span>
+            <span aria-label="Education">🎓 École Polytechnique</span>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="portfolio">
+      <!-- ====================== ABOUT ====================== -->
+      <section id="about">
         <div class="container">
-          <div class="section-title">
-            <h2>Online Certification</h2>
-          </div>
-
-          <div
-            class="row portfolio-container"
-            style="position: relative; height: 437.75px"
-          >
-            <div
-              class="col-lg-4 col-md-6 portfolio-item filter-app"
-              style="position: absolute; left: 0px; top: 0px"
-            >
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/certification/udacity.png"
-                  class="img-fluid"
-                  alt=""
-                  style="min-width: 100%; max-width: 100%; max-height: 10rem"
-                />
-                <div class="portfolio-info">
-                  <h4>ALX-T Full Stack Developer</h4>
-                  <div class="portfolio-links">
-                    <a
-                      href="https://graduation.udacity.com/confirm/E279PTKK"
-                      target="_blank"
-                      title="Certificate"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-lg-4 col-md-6 portfolio-item filter-app"
-              style="position: absolute; left: 370px; top: 0px"
-            >
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/certification/stanford.jpg"
-                  class="img-fluid"
-                  alt=""
-                  style="min-height: 10rem"
-                />
-                <div class="portfolio-info">
-                  <h4>Machine Learning Specialization</h4>
-                  <div class="portfolio-links">
-                    <a
-                      href="https://www.coursera.org/account/accomplishments/specialization/certificate/9AQV48LWWYUR"
-                      target="_blank"
-                      title="Certificate"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-lg-4 col-md-6 portfolio-item filter-app"
-              style="position: absolute; left: 740px; top: 0px"
-            >
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/certification/l2q.jpeg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Linux Fundamentals</h4>
-                  <div class="portfolio-links">
-                    <a
-                      href="https://www.coursera.org/account/accomplishments/certificate/3EVPWK4PNA2Y"
-                      target="_blank"
-                      title="Certificate"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-lg-4 col-md-6 portfolio-item filter-project"
-              style="position: absolute; left: 0px; top: 218.875px"
-            >
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/certification/ibm.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Developing Cloud Native Applications</h4>
-                  <div class="portfolio-links">
-                    <a
-                      href="https://www.coursera.org/account/accomplishments/certificate/QPNU4SPX9R6R"
-                      target="_blank"
-                      title="Certificate"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-lg-4 col-md-6 portfolio-item filter-project"
-              style="position: absolute; left: 370px; top: 218.875px"
-            >
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/certification/ibm.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Python Project for AI & Application Development</h4>
-                  <div class="portfolio-links">
-                    <a
-                      href="https://www.coursera.org/account/accomplishments/certificate/E26BDA2UQGGZ"
-                      target="_blank"
-                      title="Certificate"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-lg-4 col-md-6 portfolio-item filter-project"
-              style="position: absolute; left: 740px; top: 218.875px"
-            >
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/certification/udemy.png"
-                  style="min-height: 9rem"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>
-                    Modern Computer Vision™ PyTorch, Tensorflow2 Keras & OpenCV4
-                  </h4>
-                  <div class="portfolio-links">
-                    <a
-                      href="https://www.udemy.com/certificate/UC-3c04be4e-a195-4920-bcd2-f53f7fed9329/"
-                      target="_blank"
-                      title="Certificate"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Education Section -->
-
-    <!-- Start Experience Section -->
-
-    <section id="experience" class="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Experience</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-            <div
-            class="col-md-12 mt-4 mt-md-0 icon-box"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <h4 style="text-align: left">
-              <a href="https://meraki.cisco.com/" style="color: #12d640"
-                >Cisco Meraki</a
-              ><br />
-            </h4>
-            <h5 style="text-align: left">April 2023 - Present</h5>
-            <p style="text-align: left; color: #fff">
-              <em>Software Engineer </em>
-            </p>
-            <ul style="text-align: left">
-              <li>
-                Designing AI-driven computer vision solutions tailored specifically for Cisco Meraki Smart Cameras.
-              </li>
-            </ul>
-          </div>
-            <div
-              class="col-md-12 mt-4 mt-md-0 icon-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h4 style="text-align: left">
-                <a href="https://meraki.cisco.com/" style="color: #12d640"
-                  >Cisco Meraki</a
-                ><br />
-              </h4>
-              <h5 style="text-align: left">April 2022 - August 2022</h5>
-              <p style="text-align: left; color: #fff">
-                <em>Software Engineer Intern </em>
+          <p class="section-title">About</p>
+          <h2 class="section-heading">A quick intro.</h2>
+          <div class="about-grid">
+            <div>
+              <p>
+                I&rsquo;m a <strong>Full-Stack Software Engineer</strong> on the
+                MV Enterprise Experience team at
+                <strong>Cisco Meraki</strong>, where I ship enterprise camera
+                features end-to-end across firmware (C/C++ on Embedded Linux),
+                backend (Ruby on Rails), and dashboard (React).
               </p>
-              <ul style="text-align: left">
+              <p>
+                My work sits at the intersection of
+                <strong>embedded systems</strong>,
+                <strong>computer vision</strong>, and
+                <strong>on-device ML</strong>. I&rsquo;ve led an embedded
+                License Plate Recognition capability from prototype through
+                General Availability, built ML evaluation frameworks used in
+                production, and helped bring up new camera hardware platforms.
+              </p>
+              <p>
+                I care deeply about reliability, clean engineering, and customer
+                impact &mdash; and enjoy working across the full stack to ship
+                features that make it to real users.
+              </p>
+            </div>
+            <aside class="info-card">
+              <h3>At a glance</h3>
+              <dl>
+                <dt>Role</dt>
+                <dd>Software Engineer</dd>
+                <dt>Company</dt>
+                <dd>Cisco Meraki</dd>
+                <dt>Location</dt>
+                <dd>Paris, France</dd>
+                <dt>Focus</dt>
+                <dd>Edge AI, Embedded, Full-Stack</dd>
+                <dt>Languages</dt>
+                <dd>English, Igbo, French (B1)</dd>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== EXPERIENCE ====================== -->
+      <section id="experience">
+        <div class="container">
+          <p class="section-title">Experience</p>
+          <h2 class="section-heading">What I&rsquo;ve been building.</h2>
+          <div class="timeline">
+            <article class="role">
+              <div class="role-header">
+                <h3>
+                  Software Engineer
+                  <span class="mono" style="color: var(--text-dim)">&middot;</span>
+                  <span class="company">Cisco Meraki</span>
+                </h3>
+                <span class="dates">Jan 2025 — Present</span>
+              </div>
+              <div class="location">
+                MV Enterprise Experience Team &middot; Paris, France
+              </div>
+              <ul>
                 <li>
-                  Developed an AI-based service for vehicle speed estimation from camera video, specifically tailored for Cisco Meraki Cameras. Implemented classical computer vision algorithms and integrated deep learning techniques to enhance accuracy and efficiency in speed estimation.
+                  Led architecture and delivery of an embedded License Plate
+                  Recognition capability from prototype through General
+                  Availability, owning C++ on-device implementation tuned for
+                  low-power inference on Meraki camera SoCs, the Rails and React
+                  product surfaces, and post-launch reliability.
+                </li>
+                <li>
+                  Drive enterprise camera features end-to-end across firmware
+                  (C/C++, Embedded Linux), backend (Ruby on Rails), and
+                  dashboard (React), shipping to enterprise customers worldwide.
+                </li>
+                <li>
+                  Own firmware architecture improvements and lead new hardware
+                  platform bring-up on the MV camera line.
+                </li>
+                <li>
+                  Mentor engineers and lead design reviews; partner with QA,
+                  Product, and Architecture to scope and deliver features
+                  against enterprise SLAs.
                 </li>
               </ul>
-            </div>
-            <div
-              class="col-md-12 mt-4 mt-md-0 icon-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h4 style="text-align: left">
-                <a href="https://seamfix.com/" style="color: #12d640"
-                  >Seamfix Limited</a
-                ><br />
-              </h4>
-              <h5 style="text-align: left">August 2020 - July 2021</h5>
-              <p style="text-align: left; color: #fff">
-                <em
-                  >Software Quality Assurance Engineer and Automation
-                  Engineer</em
-                >
-              </p>
-              <ul style="text-align: left">
+            </article>
+
+            <article class="role">
+              <div class="role-header">
+                <h3>
+                  Software Engineer
+                  <span class="mono" style="color: var(--text-dim)">&middot;</span>
+                  <span class="company">Cisco Meraki</span>
+                </h3>
+                <span class="dates">Apr 2023 — Dec 2024</span>
+              </div>
+              <div class="location">
+                Camera Intelligence Team &middot; Paris, France
+              </div>
+              <ul>
                 <li>
-                  Contributed in the assessment of the requirements, scope,
-                  processes and sequence of new projects with managers and
-                  developers.
+                  Developed firmware features for object detection and
+                  multi-object tracking in C++ on resource-constrained edge
+                  hardware, deployed to hundreds of thousands of cameras in
+                  production.
                 </li>
                 <li>
-                  Automation of functional and regression testing for all new
-                  deliveries, test cases and test script review.
+                  Built an internal ML Ops framework for model and tracking
+                  evaluation, enabling reproducible benchmarking, regression
+                  detection, and data-driven model promotion.
                 </li>
                 <li>
-                  Training and technical support for the engineering and
-                  maintenance team and also new hires.
-                </li>
-              </ul>
-            </div>
-            <div
-              class="col-md-12 mt-4 mt-md-0 icon-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h4 style="text-align: left">
-                <a href="https://seamfix.com/" style="color: #12d640"
-                  >Seamfix Limited</a
-                ><br />
-              </h4>
-              <h5 style="text-align: left">May 2018 - October 2018</h5>
-              <p style="text-align: left; color: #fff">
-                <em>Software Engineering Intern</em>
-              </p>
-              <ul style="text-align: left">
-                <li>
-                  Java Programming
+                  Migrated tracking from SORT to ByteTrack, improving accuracy
+                  by ~20% while preserving real-time, low-latency on-device
+                  inference.
                 </li>
                 <li>
-                  Automated the testing of enterprise applications (Android and
-                  Web Portal) using Appium and Selenium frameworks.
-                </li>
-                <li>
-                  Flutter evaluation for company's future
-                  enterprise applications.
+                  Created benchmarking and visualization tools that cut
+                  production failure modes by ~50% through systematic
+                  diagnostics.
                 </li>
               </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-header">
+                <h3>
+                  Software Engineering Intern
+                  <span class="mono" style="color: var(--text-dim)">&middot;</span>
+                  <span class="company">Cisco Meraki</span>
+                </h3>
+                <span class="dates">Apr 2022 — Aug 2022</span>
+              </div>
+              <div class="location">Edge AI Research &middot; Paris, France</div>
+              <ul>
+                <li>
+                  Built a real-time vehicle speed estimation pipeline in C++ and
+                  Python for Meraki MV cameras.
+                </li>
+                <li>
+                  Integrated Kalman-filter (SORT) tracking with YOLO detection
+                  for accurate on-device multi-object tracking.
+                </li>
+                <li>
+                  Optimized the inference pipeline for low-latency, low-power
+                  execution on embedded hardware.
+                </li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-header">
+                <h3>
+                  Software Engineer (QA &amp; Automation)
+                  <span class="mono" style="color: var(--text-dim)">&middot;</span>
+                  <span class="company">Seamfix Limited</span>
+                </h3>
+                <span class="dates">Aug 2020 — Jul 2021</span>
+              </div>
+              <div class="location">Lagos, Nigeria</div>
+              <ul>
+                <li>
+                  Built automation suites with Java, TestNG, and Appium, cutting
+                  regression cycle time and improving release quality.
+                </li>
+                <li>
+                  Performed API testing with REST-Assured and end-to-end
+                  regression across web, mobile, and desktop in an Agile
+                  environment.
+                </li>
+              </ul>
+            </article>
+
+            <article class="role">
+              <div class="role-header">
+                <h3>
+                  Software Engineering Intern
+                  <span class="mono" style="color: var(--text-dim)">&middot;</span>
+                  <span class="company">Seamfix Limited</span>
+                </h3>
+                <span class="dates">May 2018 — Oct 2018</span>
+              </div>
+              <div class="location">Lagos, Nigeria</div>
+              <ul>
+                <li>
+                  Built automated tests for Android and web applications using
+                  Selenium and Appium.
+                </li>
+                <li>
+                  Contributed to enterprise Java backend development and
+                  explored Flutter for cross-platform mobile.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== EDUCATION ====================== -->
+      <section id="education">
+        <div class="container">
+          <p class="section-title">Education</p>
+          <h2 class="section-heading">Where I trained.</h2>
+          <div class="grid-two">
+            <div class="edu-card">
+              <h3>École Polytechnique</h3>
+              <p class="degree">
+                M.Sc. in Science &amp; Technology, Internet of Things
+              </p>
+              <p class="meta">Palaiseau, France &middot; 2021 — 2023</p>
+              <p class="honor">CGPA: 3.86 / 4.0 (Mention Bien)</p>
+            </div>
+            <div class="edu-card">
+              <h3>University of Nigeria, Nsukka</h3>
+              <p class="degree">B.Eng. in Electronic Engineering</p>
+              <p class="meta">Nsukka, Nigeria &middot; 2014 — 2020</p>
+              <p class="honor">CGPA: 4.87 / 5.0 (First Class Honours)</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- End Experience Section -->
-
-    <!-- Start Project Section -->
-    <!-- <section id="portfolio" class="portfolio">
-      <div class="container">
-        <div class="section-title">
-          <h2>Projects</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Web-App</li>
-              <li data-filter=".filter-project">Project</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <center><h4>Twitter Analysis</h4></center>
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/project/twitteranalysis.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a
-                    href="projects/twitteranalysis.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
+      <!-- ====================== SKILLS ====================== -->
+      <section id="skills">
+        <div class="container">
+          <p class="section-title">Skills</p>
+          <h2 class="section-heading">Tools of the trade.</h2>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h4>Languages</h4>
+              <div class="chips">
+                <span class="chip">C</span><span class="chip">C++</span
+                ><span class="chip">Ruby</span><span class="chip">Python</span
+                ><span class="chip">JavaScript</span
+                ><span class="chip">TypeScript</span
+                ><span class="chip">Java</span><span class="chip">SQL</span
+                ><span class="chip">Bash</span>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <center><h4>Image recognition as Service</h4></center>
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/project/iras.jpeg"
-                class="img-fluid"
-                alt=""
-              />
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a
-                    href="projects/iras.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
+            <div class="skill-group">
+              <h4>Frameworks</h4>
+              <div class="chips">
+                <span class="chip">Ruby on Rails</span
+                ><span class="chip">React</span><span class="chip">Redux</span
+                ><span class="chip">Flask</span><span class="chip">Node.js</span
+                ><span class="chip">PyTorch</span><span class="chip">OpenCV</span
+                ><span class="chip">REST APIs</span>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <center><h4>Music Streaming Website</h4></center>
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/project/musicplayer.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a
-                    href="projects/musicplayer.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
+            <div class="skill-group">
+              <h4>Embedded &amp; Systems</h4>
+              <div class="chips">
+                <span class="chip">Embedded Linux</span
+                ><span class="chip">Yocto</span><span class="chip">Buildroot</span
+                ><span class="chip">Linux Kernel</span
+                ><span class="chip">Cross-Compilation</span
+                ><span class="chip">Memory Mgmt</span>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <center><h4>Movie Recommender</h4></center>
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/project/recommender.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a
-                    href="projects/recommender.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
+            <div class="skill-group">
+              <h4>Computer Vision &amp; ML</h4>
+              <div class="chips">
+                <span class="chip">YOLO</span><span class="chip">DeepSORT</span
+                ><span class="chip">ByteTrack</span
+                ><span class="chip">Multi-Object Tracking</span
+                ><span class="chip">Model Quantization</span
+                ><span class="chip">LPR</span
+                ><span class="chip">Edge AI</span>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-            <center><h4>Resume Section Classifier</h4></center>
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/project/resume.jpg"
-                class="img-fluid"
-                alt=""
-              />
-              <div class="portfolio-info">
-                <h4>Resume Section Classifier</h4>
-                <div class="portfolio-links">
-                  <a
-                    href="projects/resume.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
+            <div class="skill-group">
+              <h4>Cloud &amp; DevOps</h4>
+              <div class="chips">
+                <span class="chip">Docker</span
+                ><span class="chip">Kubernetes</span
+                ><span class="chip">Jenkins</span
+                ><span class="chip">GitLab CI/CD</span
+                ><span class="chip">AWS</span><span class="chip">Git</span
+                ><span class="chip">Gerrit</span>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-            <center><h4>Video Description Generator</h4></center>
-            <div class="portfolio-wrap">
-              <img src="assets/img/project/vdg.jpg" class="img-fluid" alt="" />
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a
-                    href="projects/vdg.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <center><h4>ML-DL Web-App</h4></center>
-            <div class="portfolio-wrap">
-              <img src="assets/img/project/ml.jpg" class="img-fluid" alt="" />
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a
-                    href="projects/ml.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-            <center><h4>Image Generator</h4></center>
-            <div class="portfolio-wrap">
-              <img src="assets/img/project/gan.jpg" class="img-fluid" alt="" />
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a
-                    href="projects/gan.html"
-                    data-gall="portfolioDetailsGallery"
-                    data-vbtype="iframe"
-                    class="venobox"
-                    title="Project Details"
-                    ><i class="bx bx-info-circle"></i
-                  ></a>
-                </div>
+            <div class="skill-group">
+              <h4>Databases</h4>
+              <div class="chips">
+                <span class="chip">PostgreSQL</span
+                ><span class="chip">MySQL</span
+                ><span class="chip">Redis</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section> -->
+      </section>
 
-    <!-- End Project Section -->
-
-    <!-- Start Skills Section -->
-
-    <section id="skills" class="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Skills</h2>
+      <!-- ====================== AWARDS ====================== -->
+      <section id="awards">
+        <div class="container">
+          <p class="section-title">Honors &amp; Certifications</p>
+          <h2 class="section-heading">Recognition.</h2>
+          <div class="award-list">
+            <div class="award">
+              <div class="award-icon">★</div>
+              <div>
+                <strong style="color: var(--text)"
+                  >Best Graduating Student</strong
+                >, Faculty of Engineering, University of Nigeria, Nsukka
+                (2018/2019).
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-icon">★</div>
+              <div>
+                <strong style="color: var(--text)"
+                  >National Best Engineering Graduate (2nd Place)</strong
+                >, CODET Nigeria (2021).
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-icon">★</div>
+              <div>
+                <strong style="color: var(--text)"
+                  >National Engineering Students&rsquo; Project Competition
+                  (2nd Prize)</strong
+                >, 2019.
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-icon">✦</div>
+              <div>
+                <strong style="color: var(--text)"
+                  >Advanced Embedded Linux Development Specialization</strong
+                >, Coursera &amp; University of Colorado Boulder.
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-icon">✦</div>
+              <div>
+                <strong style="color: var(--text)"
+                  >Machine Learning Specialization</strong
+                >, Stanford University &amp; DeepLearning.AI.
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-icon">✦</div>
+              <div>
+                <strong style="color: var(--text)"
+                  >Udacity ALX-T Full Stack Developer Nanodegree</strong
+                >.
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-            <div
-              class="col-md-12 mt-4 mt-md-0 icon-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              style="background: #fff"
-            >
-              <h4 style="text-align: left; color: #09203a">
-                Languages and Databases
-              </h4>
-              <p style="text-align: left">
-                <img
-                  src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="150"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="120"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/javascript/javascript-ar21.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="120"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/php/php-ar21.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="120"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
-                  alt="upload.wikimedia.org"
-                  height="60"
-                  width="90"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg"
-                  alt="vectorlogo.zone"
-                  height="70"
-                  width="130"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="190"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="190"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="190"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/cmake/cmake-ar21.svg"
-                  alt="vectorlogo.zone"
-                  height="50"
-                  width="190"
-                />
+      </section>
+
+      <!-- ====================== CONTACT ====================== -->
+      <section id="contact">
+        <div class="container">
+          <p class="section-title">Contact</p>
+          <h2 class="section-heading">Let&rsquo;s talk.</h2>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <p class="label">Email</p>
+              <p class="value">
+                <a href="mailto:ngwucs@gmail.com">ngwucs@gmail.com</a>
               </p>
             </div>
-            <div
-              class="col-md-12 mt-4 mt-md-0 icon-box"
-              data-aos="lefade-up"
-              data-aos-delay="100"
-              style="background: #fff"
-            >
-              <h4 style="text-align: left; color: #09203a">Frameworks</h4>
-              <p style="text-align: left">
-                <img
-                  src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-              </p>
+            <div class="contact-card">
+              <p class="label">Location</p>
+              <p class="value">Paris, France</p>
             </div>
-            <div
-              class="col-md-12 mt-4 mt-md-0 icon-box"
-              data-aos="lefade-up"
-              data-aos-delay="100"
-              style="background: #fff"
-            >
-              <h4 style="text-align: left; color: #09203a">Tools</h4>
-              <p style="text-align: left">
-                <img
-                  src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/ibm_cloud/ibm_cloud-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-                <img
-                  src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg"
-                  alt="vectorlogo.zone"
-                />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- End Skills Section -->
-
-    <!-- Start Links section -->
-    <!-- <section id="links" class="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Resume & Links</h2>
-        </div>
-        <div class="row">
-          <div
-            class="col-md-3 mt-4 mt-md-0 icon-box"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <a
-              href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing"
-              target="_blank"
-              ><div class="icon"><i class="icofont-page"></i></div
-            ></a>
-            <h4 class="title">
-              <a
-                href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing"
-                target="_blank"
-                >Resume</a
-              >
-            </h4>
-            <p class="description" style="color: #fff">
-              The link contains downloadable resume
-            </p>
-          </div>
-          <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
-            <a
-              href="https://github.com/rajaprerak/LeetCode_Problems"
-              target="_blank"
-              ><div class="icon"><i class="icofont-link"></i></div
-            ></a>
-            <h4 class="title">
-              <a
-                href="https://github.com/rajaprerak/LeetCode_Problems"
-                target="_blank"
-                >LeetCode Repository</a
-              >
-            </h4>
-            <p class="description" style="color: #fff">
-              The github repository contains leetcode problems solution in
-              python.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!--End Links Section -->
-
-    <!-- Start Contact Section -->
-
-    <section id="contacts" class="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row mt-2">
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-map"></i>
-              <h3>My Address</h3>
-              <p>Paris, France</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-share-alt"></i>
-              <h3>Social Profiles</h3>
-              <div class="social-links">
+            <div class="contact-card">
+              <p class="label">LinkedIn</p>
+              <p class="value">
                 <a
                   href="https://www.linkedin.com/in/chinonso-ngwu/"
                   target="_blank"
-                  class="linkedin"
-                  ><i class="bx bxl-linkedin"></i
-                ></a>
+                  rel="noopener"
+                  >linkedin.com/in/chinonso-ngwu</a
+                >
+              </p>
+            </div>
+            <div class="contact-card">
+              <p class="label">GitHub</p>
+              <p class="value">
                 <a
-                  href="https://www.github.com/MrScan"
+                  href="https://github.com/MrScan"
                   target="_blank"
-                  class="github"
-                  ><i class="bx bxl-github"></i
-                ></a>
-                <a href="mailto:ngwucs@gmail.com" target="_blank" class="google"
-                  ><i class="bx bxl-google"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 mt-4 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-envelope"></i>
-              <h3>Email</h3>
-              <p>ngwu@gmail.com</p>
-              <p>chinonso-stanislaus.ngwu@Polytechnique.edu</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-phone-call"></i>
-              <h3>Contact</h3>
-              <p>+33 754-58-9886</p>
+                  rel="noopener"
+                  >github.com/MrScan</a
+                >
+              </p>
             </div>
           </div>
         </div>
-        <!-- <div id="sfczmlqxr5caww28rswrt8849ghbekgnh3j" ></div><script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=zmlqxr5caww28rswrt8849ghbekgnh3j&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.stat.ovh/private/freecounterstat.php?c=zmlqxr5caww28rswrt8849ghbekgnh3j" border="0" title="free web counter" alt="free web counter" style="visibility: none;"></a></noscript> -->
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> Chinonso Ngwu &middot; Built with care in
+        Paris.
       </div>
-    </section>
+    </footer>
 
-    <!-- End Contact Section -->
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
-    <script src="assets/vendor/typed.js/typed.min.js"></script>
-    <script type="text/javascript">
-      var typed = new Typed(".typing", {
-        strings: [
-          "a Software Developer",
-          "an IoT and Embedded Systems Developer",
-          "an AI and Cloud Enthusiast",
-        ],
-        loop: true,
-        typeSpeed: 65,
-        backSpeed: 65,
-      });
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
   </body>
 </html>
