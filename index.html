@@ -20,6 +20,21 @@
 
     <link rel="icon" type="image/png" href="/favicon.png" />
 
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersLight =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches;
+          var theme = saved || (prefersLight ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,23 +44,51 @@
 
     <style>
       :root {
+        --radius: 12px;
+        --radius-lg: 16px;
+        --maxw: 1080px;
+        --transition: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        /* dark theme (default) */
         --bg: #0b0f14;
         --bg-elevated: #121821;
         --bg-card: #161e29;
+        --nav-bg: rgba(11, 15, 20, 0.85);
         --border: #1f2a38;
         --border-hover: #2a3a4e;
         --text: #e6edf3;
         --text-muted: #8b96a5;
         --text-dim: #5f6b7c;
         --accent: #12d640;
+        --accent-hover: #5fff8a;
+        --accent-text: #062813;
         --accent-soft: rgba(18, 214, 64, 0.12);
         --accent-border: rgba(18, 214, 64, 0.3);
-        --radius: 12px;
-        --radius-lg: 16px;
-        --maxw: 1080px;
+        --hero-glow-1: rgba(18, 214, 64, 0.08);
+        --hero-glow-2: rgba(59, 130, 246, 0.05);
         --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
         --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
-        --transition: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      [data-theme="light"] {
+        --bg: #ffffff;
+        --bg-elevated: #f5f7fa;
+        --bg-card: #fbfcfd;
+        --nav-bg: rgba(255, 255, 255, 0.85);
+        --border: #e3e8ee;
+        --border-hover: #c9d2dc;
+        --text: #0e1623;
+        --text-muted: #4a5568;
+        --text-dim: #6f7b8c;
+        --accent: #0a8f2c;
+        --accent-hover: #097528;
+        --accent-text: #ffffff;
+        --accent-soft: rgba(10, 143, 44, 0.1);
+        --accent-border: rgba(10, 143, 44, 0.28);
+        --hero-glow-1: rgba(10, 143, 44, 0.08);
+        --hero-glow-2: rgba(59, 130, 246, 0.05);
+        --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+        --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
       }
 
       *,
@@ -68,6 +111,7 @@
         background: var(--bg);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        transition: background var(--transition), color var(--transition);
       }
 
       a {
@@ -76,7 +120,7 @@
         transition: color var(--transition);
       }
       a:hover {
-        color: #5fff8a;
+        color: var(--accent-hover);
       }
 
       code,
@@ -96,10 +140,11 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(11, 15, 20, 0.85);
+        background: var(--nav-bg);
         backdrop-filter: saturate(150%) blur(12px);
         -webkit-backdrop-filter: saturate(150%) blur(12px);
         border-bottom: 1px solid var(--border);
+        transition: background var(--transition), border-color var(--transition);
       }
       nav.topnav .inner {
         max-width: var(--maxw);
@@ -119,6 +164,11 @@
       nav.topnav .brand span {
         color: var(--accent);
       }
+      nav.topnav .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
       nav.topnav ul {
         display: flex;
         gap: 4px;
@@ -126,6 +176,7 @@
         margin: 0;
         padding: 0;
         flex-wrap: wrap;
+        align-items: center;
       }
       nav.topnav ul a {
         color: var(--text-muted);
@@ -145,8 +196,47 @@
         background: var(--accent-soft);
       }
       nav.topnav ul a.cv:hover {
-        background: rgba(18, 214, 64, 0.2);
-        color: #5fff8a;
+        background: var(--accent-soft);
+        color: var(--accent-hover);
+        border-color: var(--accent);
+      }
+
+      /* Theme toggle */
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text-muted);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all var(--transition);
+        flex-shrink: 0;
+      }
+      .theme-toggle:hover {
+        color: var(--text);
+        background: var(--bg-elevated);
+        border-color: var(--border-hover);
+      }
+      .theme-toggle svg {
+        width: 15px;
+        height: 15px;
+      }
+      .theme-toggle .icon-moon {
+        display: none;
+      }
+      .theme-toggle .icon-sun {
+        display: inline-block;
+      }
+      [data-theme="light"] .theme-toggle .icon-sun {
+        display: none;
+      }
+      [data-theme="light"] .theme-toggle .icon-moon {
+        display: inline-block;
       }
 
       /* ===================== HERO ===================== */
@@ -162,12 +252,12 @@
         background:
           radial-gradient(
             600px circle at 15% 20%,
-            rgba(18, 214, 64, 0.08),
+            var(--hero-glow-1),
             transparent 40%
           ),
           radial-gradient(
             500px circle at 85% 60%,
-            rgba(59, 130, 246, 0.05),
+            var(--hero-glow-2),
             transparent 40%
           );
         pointer-events: none;
@@ -233,11 +323,11 @@
       }
       .btn-primary {
         background: var(--accent);
-        color: #062813;
+        color: var(--accent-text);
       }
       .btn-primary:hover {
-        background: #5fff8a;
-        color: #062813;
+        background: var(--accent-hover);
+        color: var(--accent-text);
         transform: translateY(-1px);
       }
       .btn-ghost {
@@ -587,6 +677,7 @@
     <nav class="topnav" aria-label="Primary">
       <div class="inner">
         <a href="#top" class="brand">Chinonso<span>.</span>Ngwu</a>
+        <div class="nav-right">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -603,6 +694,49 @@
             >
           </li>
         </ul>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle color theme"
+          title="Toggle color theme"
+        >
+          <svg
+            class="icon-sun"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <svg
+            class="icon-moon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        </div>
       </div>
     </nav>
 
@@ -1049,6 +1183,44 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function () {
+        var btn = document.getElementById("themeToggle");
+        if (!btn) return;
+        function updateLabel() {
+          var current =
+            document.documentElement.getAttribute("data-theme") || "dark";
+          var next = current === "dark" ? "light" : "dark";
+          btn.setAttribute("aria-label", "Switch to " + next + " theme");
+          btn.setAttribute("title", "Switch to " + next + " theme");
+        }
+        updateLabel();
+        btn.addEventListener("click", function () {
+          var current =
+            document.documentElement.getAttribute("data-theme") || "dark";
+          var next = current === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          try {
+            localStorage.setItem("theme", next);
+          } catch (e) {}
+          updateLabel();
+        });
+
+        // Follow OS changes only when the user hasn't made an explicit choice
+        if (window.matchMedia) {
+          var mql = window.matchMedia("(prefers-color-scheme: light)");
+          var listener = function (e) {
+            if (localStorage.getItem("theme")) return;
+            document.documentElement.setAttribute(
+              "data-theme",
+              e.matches ? "light" : "dark"
+            );
+            updateLabel();
+          };
+          if (mql.addEventListener) mql.addEventListener("change", listener);
+          else if (mql.addListener) mql.addListener(listener);
+        }
+      })();
     </script>
   </body>
 </html>
